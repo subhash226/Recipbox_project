@@ -1,0 +1,5 @@
+import React from "react";
+
+export default function CreatorDashboard() {
+  return <section className="page-section"><div className="page-title"><span className="eyebrow">CREATOR STUDIO</span><h1>📊 Creator Dashboard</h1><p>Track your recipe performance and community engagement.</p></div><div className="dashboard-grid"><div className="stat-card"><span>Recipe Views</span><b>24.8K</b><small>↑ 18% this month</small></div><div className="stat-card"><span>Total Likes</span><b>12.4K</b><small>↑ 12% this month</small></div><div className="stat-card"><span>Followers</span><b>1,842</b><small>↑ 9% this month</small></div><div className="stat-card"><span>Recipes</span><b>24</b><small>3 drafts</small></div></div><div className="content-card dashboard-chart"><h2>Recipe Performance</h2><div className="bars">{[55,72,48,84,65,92,76].map((h,i)=><div key={i} className="bar-wrap"><div className="bar" style={{height:h+"%"}}></div><small>{["Mon","Tue","Wed","Thu","Fri","Sat","Sun"][i]}</small></div>)}</div></div></section>;
+}

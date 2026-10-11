@@ -1,0 +1,4 @@
+import React from "react";
+import RecipeCard from "../components/RecipeCard";
+import { recipes } from "../data/recipes";
+export default function Favorites() { let ids=[];let created=[];try{ids=JSON.parse(localStorage.getItem("recipebox-favorites")||"[]");created=JSON.parse(localStorage.getItem("recipebox-created")||"[]")}catch{}const all=[...created,...recipes];const saved=all.filter(r=>ids.includes(r.id));return <section className="page-section"><div className="page-title"><span className="eyebrow">SAVED</span><h1>❤️ Favorites</h1><p>Your saved recipes in one place.</p></div>{saved.length?<div className="recipe-grid">{saved.map(r=><RecipeCard key={r.id} recipe={r}/>)}</div>:<div className="empty-state"><span>♡</span><h2>Your favorites are empty.</h2><p>Tap the heart on any recipe to save it here.</p></div>}</section>; }
